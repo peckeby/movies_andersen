@@ -1,15 +1,33 @@
 import { Route, Routes } from "react-router-dom";
 import styles from "./App.module.scss";
-import Home from "pages/Home";
-import Contacts from "pages/Contacts";
+import Home from "pages/Home/HomePage";
+import Contacts from "pages/Contacts/ContactsPage";
+import AboutPage from "pages/About/AboutPage";
+import { SharedLayout } from "components/SharedLayout/SharedLayout";
+import { Profile } from "pages/Profile/Profile";
+
+import { Favorites } from "pages/Favorites/Favorites";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { getData } from "redux/selectors";
 
 function App() {
+  const data = useSelector(getData);
+
+  useEffect(() => {
+    localStorage.setItem("data", JSON.stringify(data));
+  }, [data]);
+
   return (
     <div className={styles.app}>
-      Movies
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/contacts" element={<Contacts />} />
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<Home />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contacts" element={<Contacts />} />
+          <Route path="profile" element={<Profile />} />
+          <Route path="favorites" element={<Favorites />} />
+        </Route>
       </Routes>
     </div>
   );

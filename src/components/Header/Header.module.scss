@@ -1,0 +1,46 @@
+.headerBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30px;
+  border-bottom: 2px solid cadetblue;
+}
+
+.logoGroup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:hover .logoGroupSvg,
+  &:focus .logoGroupSvg {
+    fill: cadetblue;
+  }
+
+  &:hover .logoGroupName,
+  &:focus .logoGroupName {
+    color: cadetblue;
+  }
+}
+
+.logoGroupName {
+  margin-left: 10px;
+  font-size: 24px;
+  display: flex;
+}
+
+.logoGroupSvg {
+  fill: black;
+}
+
+.navGroup {
+  display: flex;
+  gap: 100px;
+}
+
+.navGroupLink {
+  font-weight: 600;
+  &:hover,
+  &:focus {
+    color: cadetblue;
+  }
+}

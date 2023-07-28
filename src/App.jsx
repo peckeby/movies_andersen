@@ -5,9 +5,19 @@ import Contacts from "pages/Contacts/ContactsPage";
 import AboutPage from "pages/About/AboutPage";
 import { SharedLayout } from "components/SharedLayout/SharedLayout";
 import { Profile } from "pages/Profile/Profile";
+
 import { Favorites } from "pages/Favorites/Favorites";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { getData } from "redux/selectors";
 
 function App() {
+  const data = useSelector(getData);
+
+  useEffect(() => {
+    localStorage.setItem("data", JSON.stringify(data));
+  }, [data]);
+
   return (
     <div className={styles.app}>
       <Routes>

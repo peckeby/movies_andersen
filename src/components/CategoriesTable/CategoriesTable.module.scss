@@ -1,0 +1,20 @@
+.table {
+  border: 2px solid;
+  border-bottom: 0;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 60px;
+}
+
+.thead {
+  width: 150px;
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+  text-align: center;
+}
+
+.categoryName {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

@@ -1,7 +1,13 @@
 // import style from "./HomePage.module.scss";
 
+import { CategoriesTable } from "components/CategoriesTable/CategoriesTable";
+
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <div>
+      <CategoriesTable />
+    </div>
+  );
 };
 
 export default Home;
